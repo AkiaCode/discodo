@@ -102,7 +102,18 @@ async def streamSource(request: Request) -> StreamingResponse:
 
 @app.get("/status")
 async def status() -> dict:
-    return getStatus()
+    Data = getStatus()
+
+    Data["Connections"] = (
+        len(app.ClientManagers) if hasattr(app, "ClientManagers") else 0
+    )
+    Data["Players"] = (
+        sum([len(manager.voiceClients) for manager in app.ClientManagers.values()])
+        if hasattr(app, "ClientManagers")
+        else 0
+    )
+
+    return Data
 
 
 @app.get("/getSource", dependencies=[Depends(authorized)])
