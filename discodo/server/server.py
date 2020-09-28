@@ -1,8 +1,9 @@
 import asyncio
-
+import os.path
 import aiohttp
 from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.responses import HTMLResponse, StreamingResponse
+from fastapi.staticfiles import StaticFiles
 
 from .. import __version__
 from ..config import Config
@@ -10,10 +11,23 @@ from ..source import AudioData
 from ..status import getStatus
 from .planner import app as PlannerBlueprint
 from .websocket import app as WebsocketBlueprint
+from .dashboard import app as DashboardBlueprint
+
+__directory__ = os.path.dirname(os.path.realpath(__file__))
 
 app = FastAPI()
+
+app.__version__ = __version__
+
 app.include_router(WebsocketBlueprint)
 app.include_router(PlannerBlueprint)
+app.include_router(DashboardBlueprint)
+
+app.mount(
+    "/static",
+    StaticFiles(directory=os.path.join(__directory__, "./static")),
+    name="static",
+)
 
 
 def authorized(Authorization: str = Header(None)) -> str:
@@ -23,9 +37,9 @@ def authorized(Authorization: str = Header(None)) -> str:
     return Authorization
 
 
-@app.route("/")
-async def index(request: Request):
-    return HTMLResponse(f"<h1>Discodo</h1> <h3>{__version__}")
+# @app.route("/")
+# async def index(request: Request):
+#     return HTMLResponse(f"<h1>Discodo</h1> <h3>{__version__}")
 
 
 class StreamSender:

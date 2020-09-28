@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+        integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+        crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+        integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+        crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: #23272A;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        .menu.wrapper {
+            position: fixed;
+            z-index: 1;
+            width: 250px;
+            -webkit-box-flex: 0;
+            -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+        }
+
+        .ui.inverted.vertical.menu {
+            background-color: #2C2F33;
+            border-radius: 0;
+            border-width: 0 1px 0 0;
+            box-shadow: none;
+            margin: 0;
+            width: inherit;
+            overflow: hidden;
+            min-height: 100vh;
+            max-height: 100vh;
+            will-change: transform;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        body>.content {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            min-width: 0px;
+            margin-top: 20px;
+            margin-left: 270px;
+        }
+
+        p.value {
+            text-align: right;
+            font-weight: bold;
+            font-size: 32px;
+            margin-top: 30px !important;
+        }
+
+        .content>.grid {
+            width: 133%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu wrapper">
+        <div class="ui inverted vertical menu">
+            <div class="item">
+                <a class="ui logo icon image" href="/">
+                    <img src="/static/logo.png">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="ui stackable grid">
+            <div class="two wided column">
+                <div class="ui card">
+                    <div class="content">
+                        <div class="header">Total Cores</div>
+                        <p class="value">
+                            4
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="two wided column">
+                <div class="ui card">
+                    <div class="content">
+                        <div class="header">Total Threads</div>
+                        <p class="value">
+                            8
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="two wided column">
+                <div class="ui card">
+                    <div class="content">
+                        <div class="header">Avg CPU</div>
+                        <p class="value">
+                            50%
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="two wided column">
+                <div class="ui card">
+                    <div class="content">
+                        <div class="header">Avg Memory</div>
+                        <p class="value">
+                            50%
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="two wided column">
+                <div class="ui card">
+                    <div class="content">
+                        <div class="header">Total Connection</div>
+                        <p class="value">
+                            0
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="two wided column">
+                <div class="ui card">
+                    <div class="content">
+                        <div class="header">Total Players</div>
+                        <p class="value">
+                            0
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

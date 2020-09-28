@@ -12,3 +12,4 @@ hypercorn==0.10.2
 bs4==0.0.1
 lxml==4.5.2
 asyncspotify==0.12.1
+jinja2==2.11.1
