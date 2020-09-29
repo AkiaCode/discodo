@@ -81,7 +81,7 @@
             height: 200px;
         }
 
-        .version {
+        p.version {
             position: absolute;
             right: 0;
             bottom: 0;
@@ -193,7 +193,6 @@
         </div>
     </div>
 
-    <p class="version">MIT License Discodo {{ request.app.__version__ }}</p>
 
     <script>
         var loadChart = new Chart(document.querySelector('#load').getContext('2d'),
@@ -418,5 +417,7 @@
         }, 1000)
     </script>
 </body>
+
+<p class="version">MIT License Discodo {{ request.app.__version__ }}</p>
 
 </html>
